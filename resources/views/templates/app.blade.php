@@ -13,7 +13,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-
+@Auth
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
@@ -33,8 +33,19 @@
                 <a class="nav-link" href="/login">Login</a>
             </li>
                 @endif
+
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
         </ul>
     </div>
+    @endauth
 </nav>
 
 

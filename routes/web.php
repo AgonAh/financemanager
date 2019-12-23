@@ -15,7 +15,7 @@ Route::get('/', 'UserController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function(){redirect('/');});
 Route::get('/history', 'UserController@history')->name('UserHistory');
 Route::get('/projects', 'UserController@projects')->name('UserProjects');
 Route::get('/newproject', 'UserController@newProject')->name('UserNewProject');

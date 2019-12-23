@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('templates.app')
 
 @section('content')
 <div class="container">
@@ -62,6 +62,7 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+                                <a href="/register" class="btn btn-primary">Register</a>
                             </div>
                         </div>
                     </form>

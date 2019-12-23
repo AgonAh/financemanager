@@ -22,6 +22,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="/projects">Projektet</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin">Admin</a>
+            </li>
 
         </ul>
         <ul class="navbar-nav navbar-right">

@@ -11,10 +11,20 @@ class AdminController extends Controller{
     public function __construct()
     {
         $this->middleware('auth');
-        //TODO::Add admin role to db and check it here
+
+
+    }
+
+    private function checkAdmin(){
+        if(Auth::user()->role_id<2){
+            session()->flash('failed','Nuk keni akses admini');
+            return redirect('/');
+        }
+        return false;
     }
 
     public function index(){
+        $isAdmin = $this->checkAdmin(); if($isAdmin) return $isAdmin;
         $data['newinvoices']=Invoice::where('approved',0)->count();
         $data['approvedinvoices']=Invoice::where('approved',1)->count();
         $data['urgentinvoices']=Invoice::where('due_date','<',date("Y-m-d H:i:s", time()+259200))->where('approved','=',0)->count();
@@ -23,26 +33,31 @@ class AdminController extends Controller{
     }
 
     public function newInvoices(){
+        $isAdmin = $this->checkAdmin(); if($isAdmin) return $isAdmin;
         $data['invoices'] = $this->getInvoices(0);
         return view('/admin/newInvoices',$data);
     }
 
     public function approvedInvoices(){
+        $isAdmin = $this->checkAdmin(); if($isAdmin) return $isAdmin;
         $data['invoices'] = $this->getInvoices(1);
         return view('admin/approvedInvoices',$data);
     }
 
     public function urgentInvoices(){
+        $isAdmin = $this->checkAdmin(); if($isAdmin) return $isAdmin;
         $data['invoices'] = Invoice::where('due_date','<',date("Y-m-d H:i:s", time()+259200))->where('approved','=',0)->latest()->get();
         return view('admin/urgentInvoices',$data);
     }
 
     public function loadInvoicesApi($id){
+        $isAdmin = $this->checkAdmin(); if($isAdmin) return $isAdmin;
         $data['invoices'] = Invoice::whereRaw('month(due_date)=?',[$id])->get();
         return view('/admin/loadInvoicesApi',$data);
     }
 
     public function approveInvoice(Request $request){
+        $isAdmin = $this->checkAdmin(); if($isAdmin) return $isAdmin;
         $invoiceId = $request->post('invoiceId');
         $invoice = Invoice::where('id',$invoiceId)->first();
         $invoice->approved = 1;
@@ -54,6 +69,7 @@ class AdminController extends Controller{
     }
 
     public function declineInvoice(Request $request){
+        $isAdmin = $this->checkAdmin(); if($isAdmin) return $isAdmin;
         $invoiceId = $request->post('invoiceId');
         $invoice = Invoice::where('id',$invoiceId)->first();
         $invoice->approved = 2;
@@ -66,6 +82,7 @@ class AdminController extends Controller{
 
 
     private function getInvoices($type){
+        $isAdmin = $this->checkAdmin(); if($isAdmin) return $isAdmin;
         return Invoice::where('approved',$type)->get();
     }
 

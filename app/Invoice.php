@@ -7,8 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Invoice extends Model
 {
     public function project(){
-        return $this->belongsTo('App\Project');
+        return $this->belongsTo(Project::class);
     }
 
-
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

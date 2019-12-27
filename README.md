@@ -1,4 +1,6 @@
-
+Test link:<br>
+http://financa-laravel.herokuapp.com/admin<br>
+ (Nuk eshte plotesisht funksional shkaku i herokut, nuk funksionon upload dhe permbledhja mujore e fakturave ne faqen index te adminit)
 
 Te perfunduara:
 
@@ -20,11 +22,12 @@ Te perfunduara:
 
 Te paperfunduara:
 
+        - Perditesimi i te dhenave te userit /
+        - Krijimi dhe ndarja e roleve user, admin dhe superadmin /
         - Krijimi, shikimi dhe modifikimi i detajeve te projektit
         - Validimi i formave
         - Ri-dergimi i fakturave te refuzuara ose te skaduara
         - Shikimi i historise se userit dhe adminit
-        - Krijimi dhe ndarja e roleve user, admin dhe superadmin 
         - Largimi i regjistrimit normal dhe zevendesimi me regjistrim nga admini
         - Shikimi i statusit te fakturave nga useri
         - Krijimi i komenteve ne pergjigjen ndaj faktures nga admini

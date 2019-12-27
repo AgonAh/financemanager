@@ -15,7 +15,7 @@ Route::get('/', 'UserController@index');
 
 Auth::routes();
 
-Route::get('/home', function(){redirect('/');});
+Route::get('/home', 'UserController@index');
 Route::get('/history', 'UserController@history')->name('UserHistory');
 Route::get('/projects', 'UserController@projects')->name('UserProjects');
 Route::get('/newproject', 'UserController@newProject')->name('UserNewProject');
@@ -26,8 +26,12 @@ Route::get('admin/newinvoices','AdminController@newInvoices');
 Route::get('admin/approvedinvoices','AdminController@approvedInvoices');
 Route::get('admin/urgentinvoices','AdminController@urgentInvoices');
 Route::get('admin/loadInvoicesApi/{id}','AdminController@loadInvoicesApi');
+Route::get('profile','UserController@editProfile');
+Route::get('projects/{id}','UserController@viewProject');
 
 //Post
 Route::post('/invoice/create','UserController@createInvoice');
+Route::post('/project/new','UserController@projectCreate');
 Route::post('/admin/approve','AdminController@approveInvoice');
 Route::post('/admin/decline','AdminController@declineInvoice');
+Route::post('/updateprofile','UserController@updateProfile');

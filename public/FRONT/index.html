@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styling/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/e21d36c79c.js"></script>
+</head>
+
+<body>
+    <div class="hero">
+        <div class="header">
+            <div class="container">
+                <img src="./assets/Ubtlogo.png" class="ubtLogo">
+                <div class="userInfo">
+                    <img src="./assets/male.png" class="userLogo">
+                    <h2 class="userName">Jeton L</h2>
+                    <img src="./assets/down-arrow.png" class="menuButton">
+                </div>
+                <ul class="main-nav">
+                    <li class="active"><a href="index.html">Fatura</a></li>
+                    <li><a href="shikoHistorine.html">Shiko historië</a></li>
+                    <li><a href="projektet.html">Projektet</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="secondContainer">
+                <div class="firstPart">
+                    <h2 class="hellotext">Përshëndetje Jeton, a doni të shtoni fatura të reja!</h2>
+                    <h2 class="infoMessage">Mësoni nëse keni nevojë për kontratë</h2>
+                </div>
+                <div class="secondPart">
+                    <h3 class="shtoFaturen">Shto kete fakture ne kete projekt</h3>
+                    <h3 class="menyraPageses">Regjistroni mënyrën e pagesës</h3>
+                    <ul class="pagesa">
+                        <li>
+                            <input type="radio" id="fatura" name="amount" />
+                            <label for="fatura"><i class="fa fa-address-card-o" aria-hidden="true"></i>Fakturë</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="profatura" name="amount" />
+                            <label for="profatura"><i class="fa fa-clone" aria-hidden="true"></i></i>Pro Faturë</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="cash/card" name="amount" />
+                            <label for="cash/card"><i class="fa fa-credit-card"
+                                    aria-hidden="true"></i></i>Cash/Card</label>
+                        </li>
+                    </ul>
+                    <div class="btn-group">
+                        <input type="text" class="form-control" placeholder="Projektet" aria-label="Projektet"
+                            aria-describedby="basic-addon1">
+                        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Projekti 1</a>
+                            <a class="dropdown-item" href="#">Projekti 2</a>
+                            <a class="dropdown-item" href="#">Projekti 3</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="thirdPart">
+                    <h3 class="infoShpenzimetTxt">Informacion rreth shpenzimeve</h3>
+                    <div class="addBill" id="addBill">
+                        <i class="fa fa-money fa-2x" aria-hidden="true" id="firstIcon"></i>
+                        <input type="text" class="billInput" placeholder="Paratë që kam shpenzuar">
+                        <i class="fa fa-window-maximize fa-2x" aria-hidden="true" id="secondIcon"></i>
+                        <input type="text" class="billInput" placeholder="Shto specifika për këtë shpenzim">
+                        <i class="fa fa-calendar fa-2x" aria-hidden="true" id="thirdIcon"></i>
+                        <input type="text" class="billInput" placeholder="Data e skadimit të faturës">
+                        <button class="addBillButton" onclick="addNewBill()">+</button>
+                    </div>
+                    <div id="newContent"></div>
+                </div>
+                <div class="fourthPart">
+                    <button class="shtoDokument">Shto dokument të skenuar</button>
+                    <h2 class="totalMoneyTxt">Totali i parave të shpenzuara</h2>
+                    <h2 class="totalMoney">0,00 Euro</h2>
+                    <i class="fa fa-money fa-2x" aria-hidden="true" id="firstIcon"></i>
+                    <button class="dergo"><i class="fa fa-sign-out fa-2x" aria-hidden="true" id="exitIcon"></i>
+                        <h3>Dergo</h3>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    function addNewBill() {
+
+        const newDiv = document.createElement('div')
+        newDiv.className = 'addBill';
+        newDiv.innerHTML = `<i class="fa fa-money fa-2x" aria-hidden="true" id="firstIcon"></i>
+                    <input type="text" class="billInput" placeholder="Paratë që kam shpenzuar">
+                    <i class="fa fa-window-maximize fa-2x" aria-hidden="true" id="secondIcon"></i>
+                    <input type="text" class="billInput" placeholder="Shto specifika për këtë shpenzim">
+                    <i class="fa fa-calendar fa-2x" aria-hidden="true" id="thirdIcon"></i>
+                    <input type="text" class="billInput" placeholder="Data e skadimit të faturës">
+                    <button class="addBillButton" onclick="addNewBill()">+</button>`;
+
+        document.getElementById('newContent').appendChild(newDiv)
+    }
+</script>
+
+</html>

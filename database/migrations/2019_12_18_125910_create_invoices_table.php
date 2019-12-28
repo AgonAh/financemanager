@@ -26,6 +26,7 @@ class CreateInvoicesTable extends Migration
             $table->boolean('approved')->default(0);
             $table->dateTime('approved_on')->nullable();
             $table->unsignedBigInteger('approved_by')->nullable();
+            $table->text('message')->nullable();
             $table->timestamps();
         });
     }

@@ -35,3 +35,4 @@ Route::post('/project/new','UserController@projectCreate');
 Route::post('/admin/approve','AdminController@approveInvoice');
 Route::post('/admin/decline','AdminController@declineInvoice');
 Route::post('/updateprofile','UserController@updateProfile');
+Route::post('/updateInvoiceMessage','UserController@updateInvoiceMessage');

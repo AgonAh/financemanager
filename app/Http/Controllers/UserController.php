@@ -113,6 +113,13 @@ class UserController extends Controller{
         return redirect('/');
     }
 
+    public function updateInvoiceMessage(Request $request){
+
+        $invoice = Invoice::find($request->post('id'));
+        $invoice->message=$request->post('message');
+        $invoice->save();
+    }
+
 
 
     //----------PAGES---------------------

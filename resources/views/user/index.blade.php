@@ -4,7 +4,7 @@
 <div class="container">
     <div class="secondContainer">
         <div class="firstPart">
-            <h2 class="hellotext">Përshëndetje Jeton, a doni të shtoni fatura të reja!</h2>
+            <h2 class="hellotext">Përshëndetje {{Auth::user()->name}}, a doni të shtoni fatura të reja!</h2>
             <h2 class="infoMessage">Mësoni nëse keni nevojë për kontratë</h2>
         </div>
         <div class="secondPart">
@@ -20,9 +20,8 @@
                     <label for="profatura"><i class="fa fa-clone" aria-hidden="true"></i></i>Pro Faturë</label>
                 </li>
                 <li>
-                    <input type="radio" id="cashCard" name="payment_type"value="3" />
-                    <label for="cash/card"><i class="fa fa-credit-card"
-                                              aria-hidden="true"></i></i>Cash/Card</label>
+                    <input type="radio" id="cashCard" name="payment_type" value="3"/>
+                    <label for="cash/card"><i class="fa fa-credit-card" aria-hidden="true"></i></i>Cash/Card</label>
                 </li>
             </ul>
             <div class="btn-group">
@@ -45,7 +44,7 @@
             <h3 class="infoShpenzimetTxt">Informacion rreth shpenzimeve</h3>
             <div class="addBill" id="addBill">
                 <i class="fa fa-money fa-2x" aria-hidden="true" id="firstIcon"></i>
-                <input type="number" class="billInput" placeholder="Paratë që kam shpenzuar" name="ammount">
+                <input type="number" class="billInput" id="ammountInput" onchange="updateTotal()" placeholder="Paratë që kam shpenzuar" name="ammount">
                 <i class="fa fa-window-maximize fa-2x" aria-hidden="true" id="secondIcon"></i>
                 <input type="text" class="billInput" placeholder="Shto specifika për këtë shpenzim" name="description">
                 <i class="fa fa-calendar fa-2x" aria-hidden="true" id="thirdIcon"></i>
@@ -59,7 +58,7 @@
                 <input type="file" style="display:none" id="uploadDocument" name="document">
 
             <h2 class="totalMoneyTxt">Totali i parave të shpenzuara</h2>
-            <h2 class="totalMoney">0,00 Euro</h2>
+            <h2 class="totalMoney" id="totalMoney">0,00 Euro</h2>
             <i class="fa fa-money fa-2x" aria-hidden="true" id="firstIcon"></i>
             <button class="dergo" type="submit"><i class="fa fa-sign-out fa-2x" aria-hidden="true" id="exitIcon"></i>
                 <h3>Dergo</h3>
@@ -93,6 +92,10 @@
         document.getElementById('project_id').value=id;
         document.getElementById('projectsField').value=name;
         console.log(document.getElementById('project_id').value);
+    }
+
+    function updateTotal(){
+        document.getElementById('totalMoney').innerHTML= document.getElementById('ammountInput').value+' Euro';
     }
 </script>
 

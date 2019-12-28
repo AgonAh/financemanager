@@ -12,6 +12,7 @@
                     <th>Data</th>
                     <th>Përshkrimi</th>
                     <th>Totali</th>
+                    <th>Veprimi</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -23,6 +24,10 @@
                     <td>{{$invoice['due_date']}}</td>
                     <td>{{$invoice['description']}}</td>
                     <td>${{$invoice['ammount']}}</td>
+                    <td><button class="btn btn-secondary" onclick="addMessage({{$invoice['id']}},'{{$invoice['message']}}')">Shto koment</button>
+                        <div id="commentSpace{{$invoice['id']}}"></div>
+                    </td>
+
                 </tr>
                     @endforeach
                 </tbody>

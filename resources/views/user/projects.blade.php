@@ -9,17 +9,20 @@ $paymentName = ['Fakture','Pro fakture','Cash/Card']
 ?>
 <link rel="stylesheet" href="styling/projektetstyle.css">
 <div class="container">
+    <div id="createFormContainer"></div>
     <div class="secondContainer">
         <div class="firstPart">
             <div class="searchContainer">
                 <i class="fa fa-search fa-lg" aria-hidden="true" id="searchIcon"></i>
                 <input type="text" placeholder="Kërko listën e produkteve në projekte" class="search">
             </div>
-            <button class="shtoButton">
+            <button class="shtoButton" onclick="ShowCreateForm()">
                 <h3 class="plus">+</h3>
                 <h3 class="shtoTxt">Shto</h3>
             </button>
+
         </div>
+
         @foreach($projects as $project)
 
             <div class="accordion" id="accordionExample">
@@ -32,7 +35,7 @@ $paymentName = ['Fakture','Pro fakture','Cash/Card']
                             <h5 class="statusText">{{$statusList[$project['stage_id']][1]}}</h5>
                         </div>
                         <h3 class="totali">Totali i shpenzuar</h3>
-                        <h4 class="totalCost">230.05</h4>
+                        <h4 class="totalCost">€<?=$project['total']?></h4>
                     </div>
                 </div>
                 </h2>
@@ -47,6 +50,7 @@ $paymentName = ['Fakture','Pro fakture','Cash/Card']
                                     <th>Data</th>
                                     <th>Përshkrimi</th>
                                     <th>Totali</th>
+                                    <th>Veprimi</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -58,6 +62,9 @@ $paymentName = ['Fakture','Pro fakture','Cash/Card']
                                         <td>{{$invoice['due_date']}}</td>
                                         <td>{{$invoice['description']}}</td>
                                         <td>${{$invoice['ammount']}}</td>
+                                        <td><button class="btn btn-secondary" onclick="addMessage({{$invoice['id']}},'{{$invoice['message']}}')">Shto koment</button>
+                                            <div id="commentSpace{{$invoice['id']}}"></div>
+                                        </td>
                                 </tr>
                                 @endforeach
                                 </tbody>
@@ -71,11 +78,16 @@ $paymentName = ['Fakture','Pro fakture','Cash/Card']
         </div>
     </div>
 </div>
-
-
-
-
-
+        <script>
+            function ShowCreateForm(){
+                formHtml = '<form action="/project/new" method="POST">\n' +
+                    '<input type="text"  class="form-control col-md-4" placeholder="Emri i projektit" name="name">\n' +
+                    '@CSRF'+
+                    '<button type="submit" class="btn btn-secondary">Krijo</button>\n' +
+                    '</form>'
+            document.getElementById('createFormContainer').innerHTML=formHtml;
+            }
+        </script>
 
 
 
@@ -115,14 +127,6 @@ $paymentName = ['Fakture','Pro fakture','Cash/Card']
 {{--    @endforeach--}}
 {{--</div>--}}
 
-{{--        <script>--}}
-{{--            function ShowCreateForm(){--}}
-{{--                formHtml = '<form action="/project/new" method="POST">\n' +--}}
-{{--                    '<input type="text" placeholder="Emri i projektit" name="name">\n' +--}}
-{{--                    '@CSRF'+--}}
-{{--                    '<button type="submit" >Krijo</button>\n' +--}}
-{{--                    '</form>'--}}
-{{--            document.getElementById('createFormContainer').innerHTML=formHtml;--}}
-{{--            }--}}
+
 
 {{--        </script>--}}

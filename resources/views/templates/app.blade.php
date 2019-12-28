@@ -21,6 +21,10 @@
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <script src="https://use.fontawesome.com/e21d36c79c.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script src="/resources/js/message.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 </head>
 @auth()
 <body>
@@ -41,6 +45,13 @@
         </div>
     </div>
 @endauth
+@if(Session::has('success'))
+    <div class="alert alert-success"><?=session('success')?></div>
+@endif
+
+@if(Session::has('failed'))
+<div class="alert alert-danger"><?=session('failed')?></div>
+@endif
 @yield('content')
 
 

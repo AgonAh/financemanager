@@ -62,7 +62,8 @@ class AdminController extends Controller{
 
     public function loadInvoicesApi($id){
         $isAdmin = $this->checkAdmin(); if($isAdmin) return $isAdmin;
-        $data['invoices'] = Invoice::whereRaw('month(due_date)=?',[$id])->get();
+//        $data['invoices'] = Invoice::whereRaw('month(due_date)=?',[$id])->get();
+        $data['invoices'] = Invoice::all();
         return view('/admin/loadInvoicesApi',$data);
     }
 

@@ -120,6 +120,19 @@ class UserController extends Controller{
         $invoice->save();
     }
 
+    public function resubmitInvoice(Request $request){
+        $invoice = Invoice::find($request->post('id'));
+        if($invoice['user_id']!=Auth::user()->id){
+            session()->flash('failed','Nuk keni autorizim');
+            return back();
+        }
+        $invoice->approved=3;
+        $invoice->save();
+        session()->flash('success','Faktura u ridergua');
+        return back();
+
+    }
+
 
 
     //----------PAGES---------------------

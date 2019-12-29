@@ -25,9 +25,11 @@ Route::get('admin','AdminController@index');
 Route::get('admin/newinvoices','AdminController@newInvoices');
 Route::get('admin/approvedinvoices','AdminController@approvedInvoices');
 Route::get('admin/urgentinvoices','AdminController@urgentInvoices');
+Route::get('admin/resubmittedinvoices','AdminController@resubmittedInvoices');
 Route::get('admin/loadInvoicesApi/{id}','AdminController@loadInvoicesApi');
 Route::get('profile','UserController@editProfile');
 Route::get('projects/{id}','UserController@viewProject');
+Route::get('logout','Auth\LoginController@logout');
 
 //Post
 Route::post('/invoice/create','UserController@createInvoice');
@@ -36,3 +38,4 @@ Route::post('/admin/approve','AdminController@approveInvoice');
 Route::post('/admin/decline','AdminController@declineInvoice');
 Route::post('/updateprofile','UserController@updateProfile');
 Route::post('/updateInvoiceMessage','UserController@updateInvoiceMessage');
+Route::post('/resubmitInvoice','UserController@resubmitInvoice');

@@ -13,12 +13,7 @@
         </thead>
         <tbody>
         @foreach($invoices as $invoice)
-            <?php
-                $bgColor = '';
-                if($invoice['due_date']<date("Y-m-d")) $bgColor = 'background-color:darkred; color:white;';
-                else $bgColor = 'background-color:lightcoral;'
-            ?>
-            <tr style="<?=$bgColor?> ">
+            <tr>
                 <td><?=$invoice['id']?></td>
                 <td><?=$invoice['name']?></td>
                 <td><?php if(isset($invoice['project'])) echo $invoice['project']['name'];?></td>
@@ -35,9 +30,8 @@
                         <input type="hidden" name="invoiceId" value="<?=$invoice['id']?>">
                         <button class="btn btn-danger">Refuzo</button>
                     </form>
-                <button class="btn btn-secondary" onclick="addMessage({{$invoice['id']}},`{{$invoice['message']}}`)">Shto koment</button>
+                    <button class="btn btn-secondary" onclick="addMessage({{$invoice['id']}},`{{$invoice['message']}}`)">Shto koment</button>
                     <div id="commentSpace{{$invoice['id']}}"></div>
-
                 </td>
             </tr>
         </tbody>

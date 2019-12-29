@@ -15,9 +15,11 @@
         </div>
     </a>
 
-<div class="d-flex text-center" style="border:2px solid blue; width: 10vw; height: 10vw; margin-right: 5vw; border-radius: 180px">
-    <h3 class="my-auto mx-auto" style=" color: #333;">8<br>Re-derguar</h3>
-</div>
+    <a href="/admin/resubmittedinvoices">
+        <div class="d-flex text-center" style="border:2px solid blue; width: 10vw; height: 10vw; margin-right: 5vw; border-radius: 180px">
+            <h3 class="my-auto mx-auto" style=" color: #333;">{{$resubmittedInvoices}}<br>Re-derguar</h3>
+        </div>
+    </a>
 
     <a href="/admin/urgentinvoices">
         <div class="d-flex text-center" style="border:2px solid darkred; background-color: lightcoral; width: 10vw; height: 10vw; border-radius: 180px">

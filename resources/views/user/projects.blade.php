@@ -62,7 +62,7 @@ $paymentName = ['Fakture','Pro fakture','Cash/Card']
                                         <td>{{$invoice['due_date']}}</td>
                                         <td>{{$invoice['description']}}</td>
                                         <td>${{$invoice['ammount']}}</td>
-                                        <td><button class="btn btn-secondary" onclick="addMessage({{$invoice['id']}},'{{$invoice['message']}}')">Shto koment</button>
+                                        <td><button class="btn btn-secondary" onclick="addMessage({{$invoice['id']}},`{{$invoice['message']}}`)">Shto koment</button>
                                             <div id="commentSpace{{$invoice['id']}}"></div>
                                         </td>
                                 </tr>

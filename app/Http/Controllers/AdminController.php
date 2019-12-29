@@ -27,6 +27,7 @@ class AdminController extends Controller{
         $isAdmin = $this->checkAdmin(); if($isAdmin) return $isAdmin;
         $data['newinvoices']=Invoice::where('approved',0)->count();
         $data['approvedinvoices']=Invoice::where('approved',1)->count();
+        $data['resubmittedInvoices']=Invoice::where('approved',3)->count();
         $data['urgentinvoices']=Invoice::where('due_date','<',date("Y-m-d H:i:s", time()+259200))->where('approved','=',0)->count();
         //SELECT * FROM `invoices` WHERE month(due_date) = month(CURRENT_DATE) and year(due_date) = year(CURRENT_DATE)
         return view('admin/index',$data);
@@ -42,6 +43,12 @@ class AdminController extends Controller{
         $isAdmin = $this->checkAdmin(); if($isAdmin) return $isAdmin;
         $data['invoices'] = $this->getInvoices(1);
         return view('admin/approvedInvoices',$data);
+    }
+
+    public function resubmittedinvoices(){
+        $isAdmin = $this->checkAdmin(); if($isAdmin) return $isAdmin;
+        $data['invoices'] = $this->getInvoices(3);
+        return view('admin/resubmittedinvoices',$data);
     }
 
     public function urgentInvoices(){

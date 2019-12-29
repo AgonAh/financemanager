@@ -24,8 +24,16 @@
                     <td>{{$invoice['due_date']}}</td>
                     <td>{{$invoice['description']}}</td>
                     <td>${{$invoice['ammount']}}</td>
-                    <td><button class="btn btn-secondary" onclick="addMessage({{$invoice['id']}},'{{$invoice['message']}}')">Shto koment</button>
+
+                    <td><button class="btn btn-secondary" onclick="addMessage({{$invoice['id']}},`{{$invoice['message']}}`)">Shto koment</button>
                         <div id="commentSpace{{$invoice['id']}}"></div>
+                        @if($invoice['approved']==2)
+                            <form action="/resubmitInvoice" method="post">
+                                @csrf
+                                <input type="hidden" name="id" value="{{$invoice['id']}}">
+                                <button type="submit" class="btn btn-dark">Ri-dergo</button>
+                            </form>
+                        @endif
                     </td>
 
                 </tr>

@@ -37,9 +37,9 @@
                             <input type="hidden" name="invoiceId" value="<?=$invoice['id']?>">
                             <button class="btn btn-danger">Refuzo</button>
                         </form>
-                        <button class="btn btn-secondary" onclick="addMessage({{$invoice['id']}},'{{$invoice['message']}}')">Shto koment</button>
-                        <div id="commentSpace{{$invoice['id']}}"></div>
                     @endif
+                        <button class="btn btn-secondary" onclick="addMessage({{$invoice['id']}},`{{$invoice['message']}}`)">Shto koment</button>
+                        <div id="commentSpace{{$invoice['id']}}"></div>
                 </td>
             </tr>
         </tbody>

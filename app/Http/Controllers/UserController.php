@@ -110,7 +110,7 @@ class UserController extends Controller{
         $project->save();
         $project->user()->attach(Auth::user()->id);
         session()->flash('success','Project created successfully');
-        return redirect('/');
+        return redirect('/projects');
     }
 
     public function updateInvoiceMessage(Request $request){

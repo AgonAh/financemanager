@@ -1,4 +1,15 @@
 @include('/templates/app')
+<style>
+.table th {
+    color: #0069d9;
+}
+
+.row {
+    margin-top: 5%;
+    border: 1px solid #DBDBDB;
+}
+</style>
+
 <?php $paymentName = ['Fakture','Pro fakture','Cash/Card'] ?>
 <div class="container">
     <div class="row">

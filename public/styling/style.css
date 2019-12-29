@@ -65,7 +65,7 @@
 
 .main-nav li.active a {
   color: #0069d9;
-  border-bottom: 1px solid #0069d9;
+  /* border-bottom: 1px solid #0069d9; */
   padding-bottom: 1%;
 }
 

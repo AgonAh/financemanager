@@ -23,7 +23,7 @@ class CreateInvoicesTable extends Migration
             $table->unsignedBigInteger('payment_type_id');
             $table->text('description');
             $table->string('document')->nullable();
-            $table->boolean('approved')->default(0);
+            $table->unsignedTinyInteger('approved')->default(0);
             $table->dateTime('approved_on')->nullable();
             $table->unsignedBigInteger('approved_by')->nullable();
             $table->text('message')->nullable();

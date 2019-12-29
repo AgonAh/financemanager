@@ -21,7 +21,7 @@
                 </li>
                 <li>
                     <input type="radio" id="cashCard" name="payment_type" value="3"/>
-                    <label for="cash/card"><i class="fa fa-credit-card" aria-hidden="true"></i></i>Cash/Card</label>
+                    <label for="cashCard"><i class="fa fa-credit-card" aria-hidden="true"></i></i>Cash/Card</label>
                 </li>
             </ul>
             <div class="btn-group">

@@ -1,6 +1,5 @@
 @include('templates.app')
 
-
 <div class="container">
 <div class="d-flex justify-content-center">
     <a href="/admin/newinvoices">
@@ -10,7 +9,7 @@
     </a>
 
     <a href="/admin/approvedinvoices">
-        <div class="d-flex text-center" style="border:2px solid olive; width: 10vw; height: 10vw; margin-right: 5vw; border-radius: 180px;">
+        <div class="d-flex text-center" style="border:2px solid #34C500; width: 10vw; height: 10vw; margin-right: 5vw; border-radius: 180px;">
             <h3 class="my-auto mx-auto" style=" color: #333;"><?=$approvedinvoices?><br>Aprovuar</h3>
         </div>
     </a>

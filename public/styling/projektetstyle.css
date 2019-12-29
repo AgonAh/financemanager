@@ -1,226 +1,226 @@
 * {
-  margin: 0;
-  padding: 0;
-  font-family: "Source Sans Pro", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: "Source Sans Pro", sans-serif;
 }
 
 .hero {
-  background-color: #e7e7ee;
-  height: 100vh;
-  width: 100%;
+    background-color: #e7e7ee;
+    height: 100vh;
+    width: 100%;
 }
 
 .header {
-  background-color: white;
-  height: 20vh;
-  border-bottom: 1px solid #c4c4c4;
+    background-color: white;
+    height: 20vh;
+    border-bottom: 1px solid #c4c4c4;
 }
 
 .ubtLogo {
-  width: 19%;
-  margin-top: 2.5%;
-  margin-bottom: 3.5%;
+    width: 19%;
+    margin-top: 2.5%;
+    margin-bottom: 3.5%;
 }
 
 .userInfo {
-  float: right;
-  display: flex;
-  margin-top: 2.5%;
-  width: 14%;
+    float: right;
+    display: flex;
+    margin-top: 2.5%;
+    width: 14%;
 }
 
 .userLogo {
-  height: 4vh;
+    height: 4vh;
 }
 
 .menuButton {
-  height: 10px;
-  margin-left: 10%;
-  margin-top: 7.5%;
+    height: 10px;
+    margin-left: 10%;
+    margin-top: 7.5%;
 }
 
 .userName {
-  font-weight: lighter;
-  font-size: 1.5vw;
-  margin-top: 2.5%;
-  margin-left: 5.5%;
+    font-weight: lighter;
+    font-size: 1.5vw;
+    margin-top: 2.5%;
+    margin-left: 5.5%;
 }
 
 .main-nav {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .main-nav li {
-  color: #9c9b9b;
-  font-size: 19px;
-  font-weight: 600;
-  display: inline;
-  padding-right: 3vw;
+    color: #9c9b9b;
+    font-size: 19px;
+    font-weight: 600;
+    display: inline;
+    padding-right: 3vw;
 }
 
 .main-nav li a {
-  color: #9c9b9b;
-  text-decoration: none;
+    color: #9c9b9b;
+    text-decoration: none;
 }
 
 .main-nav li.active a {
-  color: #0069d9;
-  border-bottom: 1px solid #0069d9;
-  padding-bottom: 1%;
+    color: #0069d9;
+    border-bottom: 1px solid #0069d9;
+    padding-bottom: 1%;
 }
 
 .secondContainer {
-  position: relative;
-  height: 72vh;
+    position: relative;
+    height: 72vh;
 }
 
 .firstPart {
-  margin-top: 5%;
-  display: flex;
+    margin-top: 5%;
+    display: flex;
 }
 
 .search {
-  height: 6vh;
-  width: 18vw;
-  padding-left: 1%;
-  color: #a7a7a7;
-  font-style: italic;
-  -webkit-transition: width 0.3s ease-in-out;
-  transition: width 0.3s ease-in-out;
+    height: 6vh;
+    width: 18vw;
+    padding-left: 1%;
+    color: #a7a7a7;
+    font-style: italic;
+    -webkit-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
 }
 
 .search:hover {
-  width: 22vw;
+    width: 22vw;
 }
 
 #searchIcon {
-  position: absolute;
-  margin-left: 27.5%;
-  margin-top: 1.3%;
+    position: absolute;
+    margin-left: 27.5%;
+    margin-top: 1.3%;
 }
 
 .shtoButton {
-  position: absolute;
-  right: 0;
-  display: flex;
-  background-color: #e7e7ee;
-  height: 6vh;
-  width: 10vw;
-  border: 1.5px solid #0069d9;
-  border-radius: 5px;
-  color: #0069d9;
+    position: absolute;
+    right: 0;
+    display: flex;
+    background-color: #e7e7ee;
+    height: 6vh;
+    width: 10vw;
+    border: 1.5px solid #0069d9;
+    border-radius: 5px;
+    color: #0069d9;
 }
 
 .shtoButton:hover {
-  color: white;
-  background-color: #0069d9;
+    color: white;
+    background-color: #0069d9;
 }
 
 .plus {
-  position: absolute;
-  margin-left: 10%;
+    position: absolute;
+    margin-left: 10%;
 }
 
 .shtoTxt {
-  font-size: 20px;
-  margin-top: 3%;
-  margin-left: 35%;
+    font-size: 20px;
+    margin-top: 3%;
+    margin-left: 35%;
 }
 
 .projectCotainer {
-  margin-top: 2.5%;
-  margin-bottom: 2%;
+    margin-top: 2.5%;
+    margin-bottom: 2%;
 }
 
 .project {
-  position: relative;
-  display: flex;
-  width: 100%;
-  height: 8vh;
-  background-color: #ffffff;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 8vh;
+    background-color: #ffffff;
 }
 
 .projectNumber {
-  position: absolute;
-  margin-left: 2.5%;
-  margin-top: 1%;
-  font-size: 2rem;
+    position: absolute;
+    margin-left: 2.5%;
+    margin-top: 1%;
+    font-size: 2rem;
 }
 
 .projectDesc {
-  position: absolute;
-  font-size: 1.2rem;
-  margin-left: 10%;
-  margin-top: 1.5%;
+    position: absolute;
+    font-size: 1.2rem;
+    margin-left: 10%;
+    margin-top: 1.5%;
 }
 
 .status {
-  position: absolute;
-  height: 3.5vh;
-  width: 8vw;
-  margin-left: 50%;
-  margin-top: 1.5%;
-  text-align: center;
-  border: 0px;
-  border-radius: 15px;
-  background-color: #76b1f8;
+    position: absolute;
+    height: 3.5vh;
+    width: 8vw;
+    margin-left: 50%;
+    margin-top: 1.5%;
+    text-align: center;
+    border: 0px;
+    border-radius: 15px;
+    background-color: #76b1f8;
 }
 
 .status2 {
-  position: absolute;
-  height: 3.5vh;
-  width: 8vw;
-  margin-left: 50%;
-  margin-top: 1.5%;
-  text-align: center;
-  border: 0px;
-  border-radius: 15px;
-  background-color: #d6eb19e0;
+    position: absolute;
+    height: 3.5vh;
+    width: 8vw;
+    margin-left: 50%;
+    margin-top: 1.5%;
+    text-align: center;
+    border: 0px;
+    border-radius: 15px;
+    background-color: #d6eb19e0;
 }
 
 .status3 {
-  position: absolute;
-  height: 3.5vh;
-  width: 8vw;
-  margin-left: 50%;
-  margin-top: 1.5%;
-  text-align: center;
-  border: 0px;
-  border-radius: 15px;
-  background-color: #a7e47ead;
+    position: absolute;
+    height: 3.5vh;
+    width: 8vw;
+    margin-left: 50%;
+    margin-top: 1.5%;
+    text-align: center;
+    border: 0px;
+    border-radius: 15px;
+    background-color: #a7e47ead;
 }
 
 .status4 {
-  position: absolute;
-  height: 3.5vh;
-  width: 8vw;
-  margin-left: 50%;
-  margin-top: 1.5%;
-  text-align: center;
-  border: 0px;
-  border-radius: 15px;
-  background-color: #d35757be;
+    position: absolute;
+    height: 3.5vh;
+    width: 8vw;
+    margin-left: 50%;
+    margin-top: 1.5%;
+    text-align: center;
+    border: 0px;
+    border-radius: 15px;
+    background-color: #d35757be;
 }
 
 .statusText {
-  font-size: 1vw;
-  margin-top: 2.5%;
+    font-size: 1vw;
+    margin-top: 2.5%;
 }
 
 .totali {
-  position: absolute;
-  right: 0;
-  font-size: 1.2vw;
-  margin-top: 1.5%;
-  margin-right: 10%;
+    position: absolute;
+    right: 0;
+    font-size: 1.2vw;
+    margin-top: 1.5%;
+    margin-right: 10%;
 }
 
 .totalCost {
-  position: absolute;
-  right: 0;
-  margin-right: 2.5%;
-  margin-top: 1.5%;
-  font-size: 1.3vw;
-  color: #51ce09;
-  font-weight: 600;
+    position: absolute;
+    right: 0;
+    margin-right: 2.5%;
+    margin-top: 1.5%;
+    font-size: 1.3vw;
+    color: #51ce09;
+    font-weight: 600;
 }

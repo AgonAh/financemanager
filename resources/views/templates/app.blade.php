@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<style>
+.wrapper {
+    margin: 0 auto;
+    max-width: 72.5%;
+}
+
+</style>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +38,7 @@
 <body>
 <div class="hero">
     <div class="header">
-        <div class="container">
+        <div class="wrapper">
             <img src="/assets/Ubtlogo.png" class="ubtLogo">
             <div class="userInfo">
                 <img src="/assets/male.png" class="userLogo">

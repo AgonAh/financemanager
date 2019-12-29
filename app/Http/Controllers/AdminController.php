@@ -30,6 +30,7 @@ class AdminController extends Controller{
         $data['newinvoices']=Invoice::where('approved',0)->count();
         $data['approvedinvoices']=Invoice::where('approved',1)->count();
         $data['resubmittedInvoices']=Invoice::where('approved',3)->count();
+        $data['js']="document.getElementById('adminLi').classList.add('active')";
         $data['urgentinvoices']=Invoice::where('due_date','<',date("Y-m-d H:i:s", time()+259200))->where('approved','=',0)->count();
         //SELECT * FROM `invoices` WHERE month(due_date) = month(CURRENT_DATE) and year(due_date) = year(CURRENT_DATE)
         return view('admin/index',$data);
@@ -98,6 +99,7 @@ class AdminController extends Controller{
     public function manageUsers(){
         $isAdmin = $this->checkAdmin(); if($isAdmin) return $isAdmin;
         $data['users']=User::all();
+        $data['js']="document.getElementById('manageLi').classList.add('active')";
         return view('admin/manageUsers',$data);
     }
 

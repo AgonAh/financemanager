@@ -1,7 +1,16 @@
 @include('templates.app')
 <form action="/invoice/create" method="POST" enctype="multipart/form-data">
     @csrf
-<div class="container">
+
+<style>
+.wrapper {
+    margin: 0 auto;
+    max-width: 72.5%;
+}
+
+</style>
+
+<div class="wrapper">
     <div class="secondContainer">
         <div class="firstPart">
             <h2 class="hellotext">Përshëndetje {{Auth::user()->name}}, a doni të shtoni fatura të reja!</h2>

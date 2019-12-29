@@ -55,7 +55,11 @@ class UserController extends Controller{
 //    }
 
     public function index(){
-        $isUser = $this->checkUser();  if($isUser) return $isUser;
+        if(Auth::user()->role_id>1){
+            if($_SERVER['HTTP_REFERER']!='http://financa.dew/login')
+                session()->flash('failed','Nuk keni akses useri');
+            return redirect('/admin');
+        }
         $user = User::find(Auth::user()->id);
         $data['projects'] = $user->project()->get();
         $data['js']="document.getElementById('invoiceLi').classList.add('active')";

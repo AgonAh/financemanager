@@ -1,10 +1,12 @@
 <?php
 namespace App\Http\Controllers;
 use App\Invoice;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller{
 
@@ -91,6 +93,41 @@ class AdminController extends Controller{
     private function getInvoices($type){
         $isAdmin = $this->checkAdmin(); if($isAdmin) return $isAdmin;
         return Invoice::where('approved',$type)->get();
+    }
+
+    public function manageUsers(){
+        $isAdmin = $this->checkAdmin(); if($isAdmin) return $isAdmin;
+        $data['users']=User::all();
+        return view('admin/manageUsers',$data);
+    }
+
+    public function updateUser(Request $request){
+//        echo json_encode($request->post());
+        $user = User::find($request->post('id'));
+        $user->name=$request->post('name');
+        $user->email=$request->post('email');
+        if($request->post('role_id')!=null){
+            if($request->post('role_id')==3 && Auth::user()->role_id!=3){
+                session()->flash('failed','Nuk mund te caktosh superadmin pa qene superadmin');
+                return back();
+            }
+            $user->role_id=$request->post('role_id');
+        }
+        $user->save();
+        session()->flash('success','Perdoruesi '.$request->post('name').' u ruajt me sukses');
+
+        return back();
+    }
+
+    public function addUser(Request $request){
+        $user = new User;
+        $user->name=$request->post('name');
+        $user->email=$request->post('email');
+        $user->password=Hash::make($request->post('email'));
+        $user->role_id=$request->post('role_id');
+        $user->save();
+        session()->flash('success','Perdoruesi '.$request->post('name').' u krijua me sukses');
+        return back();
     }
 
 }

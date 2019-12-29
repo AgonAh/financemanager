@@ -13,7 +13,7 @@
 
 Route::get('/', 'UserController@index');
 
-Auth::routes();
+Auth::routes([ 'register' => false ]);
 
 Route::get('/home', 'UserController@index');
 Route::get('/history', 'UserController@history')->name('UserHistory');
@@ -30,6 +30,8 @@ Route::get('admin/loadInvoicesApi/{id}','AdminController@loadInvoicesApi');
 Route::get('profile','UserController@editProfile');
 Route::get('projects/{id}','UserController@viewProject');
 Route::get('logout','Auth\LoginController@logout');
+Route::get('admin/manageusers','AdminController@manageUsers');
+
 
 //Post
 Route::post('/invoice/create','UserController@createInvoice');
@@ -39,3 +41,5 @@ Route::post('/admin/decline','AdminController@declineInvoice');
 Route::post('/updateprofile','UserController@updateProfile');
 Route::post('/updateInvoiceMessage','UserController@updateInvoiceMessage');
 Route::post('/resubmitInvoice','UserController@resubmitInvoice');
+Route::post('admin/updateuser','AdminController@updateUser');
+Route::post('admin/adduser','AdminController@addUser');

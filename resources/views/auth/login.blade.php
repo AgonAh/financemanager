@@ -62,7 +62,7 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
-                                <a href="/register" class="btn btn-primary">Register</a>
+{{--                                <a href="/register" class="btn btn-primary">Register</a>--}}
                             </div>
                         </div>
                     </form>

@@ -38,9 +38,14 @@
                 <img src="/assets/down-arrow.png" class="menuButton">
             </div>
             <ul class="main-nav">
-                <li id="invoiceLi"><a href="/">Fatura</a></li>
-                <li id="historyLi"><a href="/history">Shiko historië</a></li>
-                <li id="projectLi"><a href="/projects">Projektet</a></li>
+                @if(Auth::user()->role_id==1)
+                    <li id="invoiceLi"><a href="/">Fatura</a></li>
+                    <li id="historyLi"><a href="/history">Shiko historië</a></li>
+                    <li id="projectLi"><a href="/projects">Projektet</a></li>
+                @else
+                    <li id="adminLi"><a href="/admin">Home</a></li>
+                    <li id="manageLi"><a href="/admin/manageusers">Menaxho perdoruesit</a></li>
+                @endif
             </ul>
         </div>
     </div>

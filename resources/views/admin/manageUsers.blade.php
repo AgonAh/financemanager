@@ -1,5 +1,5 @@
 @include('/templates/app')
-<div class="container">
+<div class="container" style="margin-top:2.5%;">
     <div class="card-body shadow" style="margin-bottom: 3vh">
         <h3>Shto user:</h3>
         <form action="/admin/adduser" method="POST">

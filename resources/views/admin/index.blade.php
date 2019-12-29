@@ -1,6 +1,6 @@
 @include('templates.app')
 
-<div class="container">
+<div class="container" style="margin-top:2.5%;">
 <div class="d-flex justify-content-center">
     <a href="/admin/newinvoices">
         <div class="d-flex text-center" style="border:2px solid purple; width: 10vw; height: 10vw; margin-right: 5vw; border-radius: 180px; color: #333;">
@@ -29,21 +29,20 @@
 
 <div  style="margin-top: 8vh;">
 
-<div class="d-flex justify-content-center">
+<!-- <div class="d-flex justify-content-center">
 <?php $dates = ['Janar','Shkurt','Mars','Prill','Maj','Qershor','Korrik','Gusht','Shtator','Tetor','Nentor','Dhjetor']; ?>
 <?php
 $d = date('m');
 for($i=0;$i<12;$i++){
     if($d > 11)
         $d=0;
-//    echo $dates[$d2];
     ?>
 <button onclick="loadInvoices({{$d+1}})">{{$dates[$d]}}</button>
 <?php
     $d++;
 }
 ?>
-</div>
+</div> -->
 <div id="invoiceSpace">
 
 </div>

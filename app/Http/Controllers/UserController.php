@@ -56,8 +56,8 @@ class UserController extends Controller{
 
     public function index(){
         if(Auth::user()->role_id>1){
-            if($_SERVER['HTTP_REFERER']!='http://financa.dew/login')
-                session()->flash('failed','Nuk keni akses useri');
+//            if(isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER']!='http://financa.dew/login' || !isset($_SERVER['HTTP_REFERER']))
+//                session()->flash('failed','Nuk keni akses useri');
             return redirect('/admin');
         }
         $user = User::find(Auth::user()->id);

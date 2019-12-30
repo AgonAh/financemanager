@@ -31,7 +31,7 @@
                     @foreach($invoices as $invoice)
                     <td>{{$invoice['id']}}</td>
                     <td>{{$invoice['name']}}</td>
-                    <td>{{$paymentName[$invoice['payment_type_id']]}}</td>
+                    <td>{{$paymentName[$invoice['payment_type_id']-1]}}</td>
                     <td>{{$invoice['due_date']}}</td>
                     <td>{{$invoice['description']}}</td>
                     <td>${{$invoice['ammount']}}</td>

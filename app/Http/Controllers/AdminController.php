@@ -52,7 +52,7 @@ class AdminController extends Controller{
     public function resubmittedinvoices(){
         $isAdmin = $this->checkAdmin(); if($isAdmin) return $isAdmin;
         $data['invoices'] = $this->getInvoices(3);
-        return view('admin/resubmittedinvoices',$data);
+        return view('admin/resubmittedInvoices',$data);
     }
 
     public function urgentInvoices(){

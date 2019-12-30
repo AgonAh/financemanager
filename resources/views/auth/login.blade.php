@@ -6,10 +6,10 @@
     <div class="hero">
         <div class="mainImage">
             <div>
-                <img src="/assets//ubtlogo.png" class="voterImage">
+                <img src="/assets//ubtlogoLogin.png" class="voterImage">
             </div>
             <div>
-                <img src="/assets//ubtlogo.png" class="votoImage">
+                <img src="/assets//ubtlogoLogin.png" class="votoImage">
             </div>
         </div>
         <div class="login">

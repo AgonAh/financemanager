@@ -44,7 +44,10 @@
                 <img src="/assets/male.png" class="userLogo">
                 <h2 class="userName">{{Auth::user()->name}}</h2>
                 <img src="/assets/down-arrow.png" class="menuButton">
+                <a class="col-md-12 nav-link" href="/logout">Log out</a>
+
             </div>
+
             <ul class="main-nav">
                 @if(Auth::user()->role_id==1)
                     <li id="invoiceLi"><a href="/">Fatura</a></li>
@@ -55,6 +58,12 @@
                     <li id="manageLi"><a href="/admin/manageusers">Menaxho perdoruesit</a></li>
                 @endif
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <a href="/logout">Log out</a>
+            </ul>
+
+
+
         </div>
     </div>
 @endauth

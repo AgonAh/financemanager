@@ -58,9 +58,6 @@
                     <li id="manageLi"><a href="/admin/manageusers">Menaxho perdoruesit</a></li>
                 @endif
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <a href="/logout">Log out</a>
-            </ul>
 
 
 

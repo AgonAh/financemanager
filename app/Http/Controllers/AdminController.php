@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
+
 class AdminController extends Controller{
 
     public function __construct()
@@ -126,7 +127,7 @@ class AdminController extends Controller{
         $user = new User;
         $user->name=$request->post('name');
         $user->email=$request->post('email');
-        $user->password=\Hash::make($request->post('email'));
+        $user->password=Hash::make($request->post('email'));
         $user->role_id=$request->post('role_id');
         $user->save();
         session()->flash('success','Perdoruesi '.$request->post('name').' u krijua me sukses');

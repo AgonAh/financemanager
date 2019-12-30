@@ -21,7 +21,7 @@
             <h3 class="menyraPageses">Regjistroni mënyrën e pagesës</h3>
             <ul class="pagesa">
                 <li>
-                    <input type="radio" id="fatura" name="payment_type" value="1" />
+                    <input type="radio" id="fatura" name="payment_type" checked value="1" />
                     <label for="fatura"><i class="fa fa-address-card-o" aria-hidden="true"></i>Fakturë</label>
                 </li>
                 <li>

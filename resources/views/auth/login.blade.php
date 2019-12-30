@@ -6,7 +6,7 @@
     <div class="hero">
         <div class="mainImage">
             <div>
-                <img src="/assets//ubtlogoLogin.png" class="voterImage">
+{{--                <img src="/assets//ubtlogoLogin.png" class="voterImage d-none">--}}
             </div>
             <div>
                 <img src="/assets//ubtlogoLogin.png" class="votoImage">

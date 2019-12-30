@@ -9,7 +9,8 @@
     border: 1px solid #DBDBDB;
 }
 </style>
-<?php $statusColor = ['darkgoldenrod','forestgreen','orangered','darkgoldenrod'] ?>
+{{--Unanswered, approved, rejected, resent--}}
+<?php $statusColor = ['#FBFFE0','#DFFFDE','#FFCFCF','#FCFF89'] ?>
 <?php $paymentName = ['Fakture','Pro fakture','Cash/Card'] ?>
 <div class="container">
     <div class="row">
@@ -27,9 +28,9 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
                     @foreach($invoices as $invoice)
-                    <td style="background-color: {{$statusColor[$invoice['approved']]}}">{{$invoice['id']}}</td>
+                    <tr style="background-color: {{$statusColor[$invoice['approved']]}}">
+                    <td>{{$invoice['id']}} </td>
                     <td>{{$invoice['name']}}</td>
                     <td>{{$paymentName[$invoice['payment_type_id']-1]}}</td>
                     <td>{{$invoice['due_date']}}</td>

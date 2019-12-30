@@ -10,7 +10,7 @@
 }
 </style>
 {{--Unanswered, approved, rejected, resent--}}
-<?php $statusColor = ['#FBFFE0','#DFFFDE','#FFCFCF','#FCFF89'] ?>
+<?php $statusColor = ['#FBFFE0','#DFFFDE','#FFCFCF','#FBFFE0'] ?>
 <?php $paymentName = ['Fakture','Pro fakture','Cash/Card'] ?>
 <div class="container">
     <div class="row">

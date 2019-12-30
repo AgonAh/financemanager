@@ -33,13 +33,13 @@
                     <form action="{{ route('login') }}" method="POST">
                         @csrf
                         <div id="emailError">
-                            <label id="u" class="labelStyle">Username</label><br>
+                            <label id="u" class="labelStyle">Email</label><br>
                             <input id="user" type="text" name="email" placeholder="Email" class="textInputFoo"><br>
                             <div id ="user">
                                 <span id="username" class="text-danger font-weight-bold"></span>
                             </div>
                         </div>
-                        <label id="p" class="labelStyle2">Password</label><br>
+{{--                        <label id="p" class="labelStyle2">Password</label><br>--}}
                         <div id="passError">
                             <input id="pass" type="password" name="password" placeholder="Password" class="textInputFoo"><br>
                             <div id="passw">

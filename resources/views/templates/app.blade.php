@@ -42,7 +42,7 @@
             <img src="/assets/Ubtlogo.png" class="ubtLogo">
             <div class="userInfo">
                 <img src="/assets/male.png" class="userLogo">
-                <h2 class="userName">{{Auth::user()->name}}</h2>
+                <a href="/profile" style="text-decoration: none; color: black"><h2 class="userName">{{Auth::user()->name}}</h2></a>
                 <img src="/assets/down-arrow.png" class="menuButton">
                 <a class="col-md-12 nav-link" href="/logout">Log out</a>
 

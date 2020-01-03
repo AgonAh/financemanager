@@ -28,7 +28,7 @@
 </div>
 
 <div  style="margin-top: 8vh;">
-
+<?php /*
 <!-- <div class="d-flex justify-content-center">
 <?php $dates = ['Janar','Shkurt','Mars','Prill','Maj','Qershor','Korrik','Gusht','Shtator','Tetor','Nentor','Dhjetor']; ?>
 <?php
@@ -43,6 +43,7 @@ for($i=0;$i<12;$i++){
 }
 ?>
 </div> -->
+*/?>
 <div id="invoiceSpace">
 
 </div>

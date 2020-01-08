@@ -1,7 +1,13 @@
+
+
 <div>
     <table class="table">
         <thead>
-        <tr>
+        <!-- <tr>
+        <th style="width:100%; color: white; background: #076FFF">Faturat</th>
+        </tr> -->
+        <div style="width:100%; height:7vh; color: white; background: #076FFF"><h3 style="padding-top:0.7%; padding-left:1%">Fakturat</h3></div>
+        <tr style="background: #B5D4FF">
             <th scope="col">Nr</th>
             <th scope="col">Titulli</th>
             <th scope="col">Projekti</th>
@@ -14,10 +20,9 @@
         @foreach($invoices as $invoice)
             <?php
             $bgColor = '';
-            if($invoice['approved']==1) $bgColor = 'background-color:olivedrab; color:white;';
+            if($invoice['approved']==1) $bgColor = 'background-color:#4EB64B; color:white;';
             if($invoice['due_date']<date("Y-m-d") && $invoice['approved']!=0) $bgColor = 'background-color:#FF4D4D; color:white;';
-            else if($invoice['due_date']<date("Y-m-d",time()+259200)) $bgColor = 'background-color:lightcoral;';
-
+            else if($invoice['due_date']<date("Y-m-d",time()+259200)) $bgColor = 'background-color:#FF8888;';
             ?>
             <tr style="<?=$bgColor?> ">
                 <td><?=$invoice['id']?></td>

@@ -16,7 +16,7 @@ $paymentName = ['Fakture','Pro fakture','Cash/Card']
                 <input type="text" placeholder="Kërko listën e produkteve në projekte" class="search">
             </div>
             <button type="button" class="shtoButton" data-toggle="modal" data-target="#exampleModalCenter">
-                    Shto
+                    <h6 class="shtoText">Shto</h6>
                 </button>
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -78,7 +78,6 @@ $paymentName = ['Fakture','Pro fakture','Cash/Card']
                                     @foreach($project['invoice'] as $invoice)
                                         <td>{{$invoice['id']}}</td>
                                         <td>{{$invoice['name']}}</td>
-                                        <td>{{$paymentName[$invoice['payment_type_id']]}}</td>
                                         <td>{{$invoice['due_date']}}</td>
                                         <td>{{$invoice['description']}}</td>
                                         <td>${{$invoice['ammount']}}</td>

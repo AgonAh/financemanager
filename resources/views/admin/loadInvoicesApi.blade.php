@@ -20,15 +20,14 @@
         @foreach($invoices as $invoice)
             <?php
             $bgColor = '';
-//<<<<<<< HEAD
             if($invoice['approved']==1) $bgColor = 'background-color:#6DD16A; color:white;';
             else if($invoice['due_date']<date("Y-m-d") && $invoice['approved']!=0) $bgColor = 'background-color:#FF4D4D; color:white;';
             else if($invoice['due_date']<date("Y-m-d",time()+259200)) $bgColor = 'background-color:lightcoral;';
-//=======
+
             if($invoice['approved']==1) $bgColor = 'background-color:#4EB64B; color:white;';
             else if($invoice['due_date']<date("Y-m-d") && $invoice['approved']!=0) $bgColor = 'background-color:#FF4D4D; color:white;';
             else if($invoice['due_date']<date("Y-m-d",time()+259200)) $bgColor = 'background-color:#FF8888;';
-//>>>>>>> 304de0488962e6e169b7994151ade266dd1328e5
+
             ?>
             <tr style="<?=$bgColor?> ">
                 <td><?=$invoice['id']?></td>

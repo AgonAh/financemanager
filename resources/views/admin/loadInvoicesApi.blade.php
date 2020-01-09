@@ -76,7 +76,7 @@
                 <td><?=$invoice['due_date']?></td>
                 <td>
                     @if($invoice['document']!="")
-                        <a href="/storage/{{$invoice['document']}}" target="_blank"><?=$invoice['ammount']?></a>
+                        <a href="/store/{{$invoice['document']}}" target="_blank"><?=$invoice['ammount']?></a>
                     @else
                         <?=$invoice['ammount']?>
                     @endif

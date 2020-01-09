@@ -38,6 +38,11 @@
         outline: none;
     }
 
+    .veprimiSpan button{
+        float:right;
+        height:3vh;
+    }
+
 </style>
 
 <div>
@@ -71,19 +76,23 @@
                 <td><?=$invoice['due_date']?></td>
                 <td><?=$invoice['ammount']?></td>
                 <td >
+                    <span class="veprimiSpan">
                     @if($invoice['approved']==0)
-                        <form action="/admin/approve" method="POST" style="display:inline">
-                            @csrf
-                            <input type="hidden" name="invoiceId" value="<?=$invoice['id']?>">
-                            <button type="submit" class="konfirmoButton">Aprovo</button>
-                        </form>
-                        <form action="/admin/decline" method="POST" style="display:inline">
-                            @csrf
-                            <input type="hidden" name="invoiceId" value="<?=$invoice['id']?>">
-                            <button class="refuzonButton">Refuzo</button>
-                        </form>
+
+                            <form action="/admin/approve" method="POST" style="display:inline">
+                                @csrf
+                                <input type="hidden" name="invoiceId" value="<?=$invoice['id']?>">
+                                <button type="submit" class="konfirmoButton">Aprovo</button>
+                            </form>
+                            <form action="/admin/decline" method="POST" style="display:inline">
+                                @csrf
+                                <input type="hidden" name="invoiceId" value="<?=$invoice['id']?>">
+                                <button class="refuzonButton">Refuzo</button>
+                            </form>
+
                     @endif
                     <button class="shtoKoment" onclick="addMessage({{$invoice['id']}},`{{$invoice['message']}}`)">Shto koment</button>
+                            </span>
                     <div id="commentSpace{{$invoice['id']}}"></div>
                 </td>
             </tr>

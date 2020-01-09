@@ -72,8 +72,6 @@
 <div class="alert alert-danger"><?=session('failed')?></div>
 @endif
 @yield('content')
-
-
 </body>
 </html>
 

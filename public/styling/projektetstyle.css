@@ -111,6 +111,11 @@
     color: #0069d9;
 }
 
+.shtoText {
+    margin-left: 40%;
+    margin-top: 5%;
+}
+
 .shtoButton:hover {
     color: white;
     background-color: #0069d9;

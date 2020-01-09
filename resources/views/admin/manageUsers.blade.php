@@ -1,4 +1,5 @@
-@include('/templates/app')
+@include('templates.app')
+
 <div class="container" style="margin-top:2.5%;">
     <div class="card-body shadow" style="margin-bottom: 3vh">
         <h3>Shto user:</h3>
@@ -25,7 +26,6 @@
                 </select>
             </div>
             <button type="submit" class="btn btn-success">Krijo</button>
-
         </form>
     </div>
 <table class="table table-striped">
@@ -63,3 +63,4 @@
 
 </table>
 </div>
+

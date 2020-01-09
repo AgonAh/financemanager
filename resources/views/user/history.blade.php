@@ -32,7 +32,10 @@
                     <tr style="background-color: {{$statusColor[$invoice['approved']]}}">
                     <td>{{$invoice['id']}} </td>
                     <td>{{$invoice['name']}}</td>
+<<<<<<< HEAD
                     <td>{{$paymentName[$invoice['payment_type_id']-1]}}</td>
+=======
+>>>>>>> 304de0488962e6e169b7994151ade266dd1328e5
                     <td>{{$invoice['due_date']}}</td>
                     <td>{{$invoice['description']}}</td>
                     <td>${{$invoice['ammount']}}</td>

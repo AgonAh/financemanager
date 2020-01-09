@@ -1,4 +1,44 @@
+<style>
+    .shtoKoment {
+        border: 0px;
+        background:#f9f9f9;
+        width: 7vw;
+        height:3.5vh;
+        font-size: 0.9rem;
+        border-radius: 3px;
+    }
 
+    .shtoKoment:focus {
+        outline: none;
+    }
+
+    .konfirmoButton {
+        border: 0px;
+        background:#88FB97;
+        width: 7vw;
+        height:3.5vh;
+        font-size: 0.9rem;
+        border-radius: 3px;
+    }
+
+    .konfirmoButton:focus {
+        outline: none;
+    }
+
+    .refuzonButton {
+        border: 0px;
+        background:#FE6060;
+        width: 7vw;
+        height:3.5vh;
+        font-size: 0.9rem;
+        border-radius: 3px;
+    }
+
+    .refuzonButton:focus {
+        outline: none;
+    }
+
+</style>
 
 <div>
     <table class="table">
@@ -20,14 +60,9 @@
         @foreach($invoices as $invoice)
             <?php
             $bgColor = '';
-            if($invoice['approved']==1) $bgColor = 'background-color:#6DD16A; color:white;';
+            if($invoice['approved']==1);
             else if($invoice['due_date']<date("Y-m-d") && $invoice['approved']!=0) $bgColor = 'background-color:#FF4D4D; color:white;';
-            else if($invoice['due_date']<date("Y-m-d",time()+259200)) $bgColor = 'background-color:lightcoral;';
-
-            if($invoice['approved']==1) $bgColor = 'background-color:#4EB64B; color:white;';
-            else if($invoice['due_date']<date("Y-m-d") && $invoice['approved']!=0) $bgColor = 'background-color:#FF4D4D; color:white;';
-            else if($invoice['due_date']<date("Y-m-d",time()+259200)) $bgColor = 'background-color:#FF8888;';
-
+            else if($invoice['due_date']<date("Y-m-d",time()+259200)) $bgColor = 'background-color:#EDB9BF;';
             ?>
             <tr style="<?=$bgColor?> ">
                 <td><?=$invoice['id']?></td>
@@ -40,22 +75,19 @@
                         <form action="/admin/approve" method="POST" style="display:inline">
                             @csrf
                             <input type="hidden" name="invoiceId" value="<?=$invoice['id']?>">
-                            <button type="submit" class="btn btn-success">Aprovo</button>
+                            <button type="submit" class="konfirmoButton">Aprovo</button>
                         </form>
                         <form action="/admin/decline" method="POST" style="display:inline">
                             @csrf
                             <input type="hidden" name="invoiceId" value="<?=$invoice['id']?>">
-                            <button class="btn btn-danger">Refuzo</button>
+                            <button class="refuzonButton">Refuzo</button>
                         </form>
                     @endif
-                        <button class="btn btn-secondary" onclick="addMessage({{$invoice['id']}},`{{$invoice['message']}}`)">Shto koment</button>
-                        <div id="commentSpace{{$invoice['id']}}"></div>
+                    <button class="shtoKoment" onclick="addMessage({{$invoice['id']}},`{{$invoice['message']}}`)">Shto koment</button>
+                    <div id="commentSpace{{$invoice['id']}}"></div>
                 </td>
             </tr>
         </tbody>
         @endforeach
     </table>
 </div>
-
-
-

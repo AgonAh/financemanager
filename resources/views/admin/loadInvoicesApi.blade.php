@@ -74,7 +74,13 @@
                 <td><?=$invoice['name']?></td>
                 <td><?php if(isset($invoice['project'])) echo $invoice['project']['name'];?></td>
                 <td><?=$invoice['due_date']?></td>
-                <td><?=$invoice['ammount']?></td>
+                <td>
+                    @if($invoice['document']!="")
+                        <a href="/storage/{{$invoice['document']}}" target="_blank"><?=$invoice['ammount']?></a>
+                    @else
+                        <?=$invoice['ammount']?>
+                    @endif
+                </td>
                 <td >
                     <span class="veprimiSpan">
                     @if($invoice['approved']==0)
@@ -100,3 +106,4 @@
         @endforeach
     </table>
 </div>
+
